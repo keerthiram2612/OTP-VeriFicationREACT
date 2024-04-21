@@ -10,7 +10,7 @@ function PhoneOtpform() {
     <div>
       <form onSubmit={()=>{}}>
         <input type='text' value={phoneNumber}
-        onChange={handlePhoneNumber}></input>
+        onChange={handlePhoneNumber} placeholder={"Enter Phone Number"}></input>
       </form>
     </div>
   )
