@@ -8,7 +8,7 @@ export default function App() {
     <div className='App'>
      <h1>Login with Phone</h1> 
      <PhoneOtpForm/>
-     <OtpInput/>
+      
     </div>
   )
 }

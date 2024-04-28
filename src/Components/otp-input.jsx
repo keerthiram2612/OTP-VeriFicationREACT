@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 const OtpInput = ({length = 4, onOtpSubmit=()=>{}})=>{
     const [otp,setOtp]=useState(new Array(length).fill(""));
+    const inputRefs = useRef([]);
     console.log(otp);
     const handleChange =()=>{
 
@@ -17,7 +18,8 @@ const OtpInput = ({length = 4, onOtpSubmit=()=>{}})=>{
     {
         otp.map((value,index)=>{
             return<input
-             key ={index} type="text" value={value}
+             key ={index} type="text"
+             ref = {(input)=>(inputRefs.current[input]=input)} value={value}
             onChange={(e)=>handleChange(index,e)}
             onClick={()=>handleClick(index)}
             onKeyDown={(e)=>handleKey(index,e)}
