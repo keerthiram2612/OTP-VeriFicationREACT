@@ -1,8 +1,15 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const OtpInput = ({length = 4, onOtpSubmit=()=>{}})=>{
     const [otp,setOtp]=useState(new Array(length).fill(""));
     const inputRefs = useRef([]);
+
+    useEffect(()=>{
+        if(inputRefs.current[0]){
+            inputRefs.current[0].focus();
+        }
+    })
+    
     console.log(otp);
     const handleChange =()=>{
 
