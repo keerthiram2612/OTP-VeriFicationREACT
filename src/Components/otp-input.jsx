@@ -11,8 +11,17 @@ const OtpInput = ({length = 4, onOtpSubmit=()=>{}})=>{
     })
     
     console.log(otp);
-    const handleChange =()=>{
+    const handleChange =(index,e)=>{
+       const value = e.target.value;
+       if(isNaN(value))return
 
+       const newOtp = [...otp];
+       //allow only one input 
+       newOtp[index] = value.substring(value.length-1);
+       setOtp(newOtp);
+       //submit trigger 
+       const combinedOtp = newOtp.join("");
+       console.log(newOtp,combinedOtp);
     }
     const handleClick =()=>{
 
